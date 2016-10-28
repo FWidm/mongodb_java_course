@@ -1,0 +1,6 @@
+Find the movie that was created in '13, is PG-13 and had no award wins.
+> db.movieDetails.find({$and: [{"year":2013},{"rated":"PG-13"},{"awards.wins":0}]},{"title":1})
+{ "_id" : ObjectId("5692a3e124de1e0ce2dfda22"), "title" : "A Decade of Decadence, Pt. 2: Legacy of Dreams" }
+Find all movies where the second country is equal to Sweden, how many are there?
+> db.movieDetails.find({"countries.1":"Sweden"}).count()
+6
